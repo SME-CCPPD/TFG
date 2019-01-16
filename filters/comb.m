@@ -1,0 +1,1 @@
+fc=1;step=0.01W=[0:step:fc*2*pi-step];m=7H=1+e.^(-i*W*m);plot(W,H);

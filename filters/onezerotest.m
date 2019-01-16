@@ -1,0 +1,1 @@
+fc=1000;dur=10;sinc=1/fc;t=[0:sinc:dur-sinc];X=rand(1,length(t))*2-1;Y=zeros(1,length(t));for k=2:length(t)  Y(k)=(X(k)+X(k-1))/2;  endbinsize=fc/length(t);F=[0:binsize:fc-binsize];Yfft=fft(Y);mag=20*log10(abs(Yfft))/length(t);plot(F,mag);
