@@ -4,13 +4,22 @@ from Filter import Filter
 import unittest
 
 class TestFilter(unittest.TestCase):
-
+    
+    def setUp(self):
+        self.f =Filter()
+    
     def test_creation(self):
-        self.assertTrue(Filter())
+        self.assertTrue(self.f)
 
     def test_display(self):
-        f=Filter()
-        self.assertIsNone(f.display())
+        self.assertIsNone(self.f.display())
 
+    def test_zeros(self):
+        self.assertEqual(self.f.zeros(),[])
+    
+    def test_poles(self):
+        self.assertEqual(self.f.poles(),[])
+        
+        
 if __name__ == '__main__':
     unittest.main()

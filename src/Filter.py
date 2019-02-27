@@ -18,3 +18,8 @@ class Filter:
         self.phase_resp()
         
 
+    def zeros(self):
+        return []
+        
+    def poles(self):
+        return []
