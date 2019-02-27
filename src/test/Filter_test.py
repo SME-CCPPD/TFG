@@ -1,4 +1,6 @@
-from filter import Filter
+import sys
+sys.path.insert(0,"../")
+from Filter import Filter
 import unittest
 
 class TestFilter(unittest.TestCase):
@@ -8,7 +10,7 @@ class TestFilter(unittest.TestCase):
 
     def test_display(self):
         f=Filter()
-        self.assert(f.display())
+        self.assertIsNone(f.display())
 
 if __name__ == '__main__':
     unittest.main()

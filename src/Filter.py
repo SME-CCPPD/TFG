@@ -1,14 +1,14 @@
 class Filter:
-    def z_plane():
+    def z_plane(self):
         pass
 
-    def freq_resp():
+    def freq_resp(self):
         pass
 
-    def imp_resp():
+    def imp_resp(self):
        pass
 
-    def phase_resp():
+    def phase_resp(self):
         pass
         
     def display(self):
