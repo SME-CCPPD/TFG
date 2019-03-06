@@ -1,3 +1,4 @@
+import numpy as np
 class Filter:
     def z_plane(self):
         pass
@@ -19,7 +20,17 @@ class Filter:
         
 
     def zeros(self):
-        return []
+        return np.roots(self.fir_coefs)
         
     def poles(self):
-        return []
+        return np.roots(self.iir_coefs)
+
+    def __init__(self, fc, ic):
+        self.fir_coefs=fc if np.size(fc)>1  else np.append(fc,0)
+        self.iir_coefs=ic if np.size(ic)>1  else np.append(ic,0)
+
+    def create(zeros,poles):
+        fc=np.poly(zeros)
+        ic=np.poly(poles)
+        return Filter(fc,ic)
+    
