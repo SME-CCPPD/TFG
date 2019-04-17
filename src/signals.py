@@ -12,7 +12,7 @@ class Signals:
 	
 	def onClick(self, widget, button):
 		print("onClick: ", button.x, button.y)
-		cr = self.zPlane.window.cairo()
+		cr = widget.get_child().cairo_create()
 		cr.set_line_width(9)
         	cr.set_source_rgb(0.7, 0.2, 0.0)
                 

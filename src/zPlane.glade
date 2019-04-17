@@ -4,8 +4,8 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkWindow" id="zPlane">
     <property name="can_focus">False</property>
-    <signal name="button-press-event" handler="onClick" swapped="no"/>
     <signal name="destroy" handler="onDestroy" swapped="no"/>
+    <signal name="button-press-event" handler="onClick" swapped="no"/>
     <child>
       <placeholder/>
     </child>
@@ -13,6 +13,7 @@
       <object class="GtkDrawingArea" id="drawingArea">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <signal name="draw" handler="onDraw" swapped="no"/>
       </object>
     </child>
   </object>

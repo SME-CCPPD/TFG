@@ -2,12 +2,14 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from signals import Signals
+from coord import Coord
 
 class zPlane:
 	def __init__(self, g):
 		self.gladeFile = g
 		self.signals = Signals(self)
 		self.setup()
+		self.coords = []
 		
 	def setup(self):
 		self.builder = Gtk.Builder()
@@ -21,3 +23,6 @@ class zPlane:
 
 	def main(self):
 		Gtk.main()
+
+	def addCoord(self, x, y):
+		self.coords.append(Coord(x, y))
